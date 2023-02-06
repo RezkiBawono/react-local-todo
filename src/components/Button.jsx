@@ -1,18 +1,15 @@
-function Button({color, text}) {
-    const onClick = () => {
-        console.log('click');
-    }
-  
-    return (
+function Button({ color, text, onClick }) {
+  return (
     <div>
-      <button 
-        onClick={onClick} 
-        style={{ backgroundColor : color}} 
-        className="btn" >
+      <button
+        onClick={onClick}
+        style={{ backgroundColor: color }}
+        className="btn"
+      >
         {text}
-        </button>
+      </button>
     </div>
-  )
+  );
 }
 
-export default Button
+export default Button;

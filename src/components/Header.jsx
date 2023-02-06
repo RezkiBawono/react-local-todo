@@ -1,13 +1,13 @@
 import React from "react";
 import Button from "./button";
 
-const Header = ({ title }) => {
+const Header = ({ title, onAdd }) => {
   return (
     <header className="header">
       <h1>{title}</h1>
-      <Button text = {'Add me'}></Button>
+      <Button onClick={onAdd} text={"Add me"} />
     </header>
-    );
-  }
-    
-export default Header
+  );
+};
+
+export default Header;

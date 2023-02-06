@@ -5,7 +5,10 @@ import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 
 function App() {
-  // use state from JSOn
+  // set a default state for add task button
+  const [showAddTask, setShowAddTask] = useState(false);
+
+  // use state from JSON
 
   const [taskList, setTaskList] = useState([
     {
@@ -56,8 +59,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header title={"React Front Page"}></Header>
-      <AddTask onAdd={addTask} />
+      <Header title={"React TODO"} onAdd={() => setShowAddTask(!showAddTask)} />
+      {/* onAdd to add a todo list when clicked, default is false(hidden) */}
+
+      {showAddTask && <AddTask onAdd={addTask} />}
+      {/* showAddTask itenary(if) simplified */}
+
       {taskList.length > 0 ? (
         <Tasks
           taskList={taskList}
